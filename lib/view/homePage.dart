@@ -109,6 +109,7 @@ class _homePageState extends State<homePage> {
               ),
               SizedBox(height: 25,),
               typeList(),
+              SizedBox(height: 5,),
               productList()
             ],
           ) 

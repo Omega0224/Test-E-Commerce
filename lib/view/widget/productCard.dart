@@ -5,8 +5,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 class productCard extends StatefulWidget {
   final productItem item;
+  final double height;
+  final double imgHeight;
 
-  const productCard({Key? key, required this.item}) : super(key: key);
+  const productCard({Key? key, required this.item, required this.height, required this.imgHeight}) : super(key: key);
 
   @override
   State<productCard> createState() => _productCardState();
@@ -18,8 +20,7 @@ class _productCardState extends State<productCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 16), // jarak antar baris
-      height: 350,
+      height: widget.height,
       width: 155,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,7 +29,7 @@ class _productCardState extends State<productCard> {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(16),
-                child: Image.asset(widget.item.image, width: 155, height: 215, fit: BoxFit.cover),
+                child: Image.asset(widget.item.image, width: 155, height: widget.imgHeight, fit: BoxFit.cover),
               ),
               Positioned(
                 top: 8,
